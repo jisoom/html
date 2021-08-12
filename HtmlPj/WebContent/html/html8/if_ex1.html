@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>숫자2개 연산자1개 => 계산결과출력</title>
+	<script type="text/javascript">
+		var num1 = prompt("첫번째 숫자를 입력하세요");
+		var ope = prompt("연산자를 입력하세요 (+, -, *, /, % 중 하나)");
+		var num2 = prompt("두번째 숫자를 입력하세요");
+		var result = num1 + ope + num2 + "=";
+		
+		if(ope == "+"){
+			result += parseInt(num1) + parseInt(num2);
+		}else if(ope == "-"){
+			result += parseInt(num1) - parseInt(num2);
+		}else if(ope == "*"){
+			result += parseInt(num1) * parseInt(num2);
+		}else if(ope =="/"){
+			result += parseFloat(num1) / parseFloat(num2);
+		}else if(ope == "%"){
+			result += parseInt(num1) % parseInt(num2);
+		}
+ 		else {
+			alert("연산자 입력이 잘못되었습니다.");
+			result = "연산자 입력이 잘못되었습니다."
+/* 			return; */ //function 안에서 return은 상관 없는데 script자체에서 return하면 아래를 아무것도 실행할 수 없음
+		} 
+		
+		document.write(result);
+/* 		document.getElementById("temp").innerHTML = result;
+		alert(result); */
+	</script>
+</head>
+<body>
+</body>
+</html>

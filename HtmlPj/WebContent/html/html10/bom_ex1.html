@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var pop;
+		
+		function openPopup() {
+			//url, name, width, height
+			//window.open("https://google.com/",  "_blacnk", "width=500, height=500");
+			
+			//window. 생략 가능
+			pop = open("https://www.google.com/", "google", "width=500, height=500");
+		}
+		
+		function closePopup() {
+			pop.close();
+		}
+		
+		function showMsg() {
+			setTimeout(function() {
+				alert("하이");
+			}, 3000);
+			
+			//함수명만 표기
+			setTimeout(alertMsg, 6000);
+		}
+		
+		function alertMsg() {
+			alert("피곤..zZ");
+		}
+		
+		var idIntval;
+		function changeBgColor() {
+/* 			setInterval(function() {
+				//배경색 변경
+			}, 2000); */
+			
+			idIntval = setInterval(changeBgColor1, 2000);
+		}
+		
+		function changeBgColor1() {
+		  //var arr = ["tomato", "palegreen", "lightskyblue", "lightyellow"];
+		  //document.getElementById("temp").style.backgroundColor = arr[parseInt(Math.random()*4)];
+		  	var r = parseInt(Math.random() *256);
+		  	var g = parseInt(Math.random() *256);
+		  	var b = parseInt(Math.random() *256);
+		  	document.getElementById("temp").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+		}
+		
+		function stopChangeBgColor() {
+			clearInterval(idIntval);
+		}
+		
+		function resetBgColor() {
+			document.getElementById("temp").style.backgroundColor = "window";
+		}
+		
+		var idIntvalPageChange;
+		function changePageBgColor() {
+			idIntvalPageChange = setInterval(changePageBgColor1,1000);
+		}
+		
+		function changePageBgColor1() {
+		  	var r = parseInt(Math.random() *256);
+		  	var g = parseInt(Math.random() *256);
+		  	var b = parseInt(Math.random() *256);
+		  	
+		  	document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+		}
+		
+		function stopChangePageBgColor() {
+			clearInterval(idIntvalPageChange); //window. 생략가능
+		}
+		
+		function resetPageBgColor() {
+			document.getElementsByTagName("body")[0].style.backgroundColor = "window";
+		}
+		
+		function movePage() {
+			var url = "https://www.naver.com";
+			
+			//case1
+			//location.href = url;
+			
+			//case2 - 현재 페이지가 history에 남음
+			location.assign(url);
+			
+			//case3 - 현재 페이지가 history에 남지 않음
+			//location.replace(url);
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="openPopup()">새 창 열기</button>
+	<button type="button" onclick="closePopup()">새 창 닫기</button>
+	<hr>
+	<p>
+	버튼을 클릭하면 3초 후 메시지가 나옵니다.
+	<button type="button" onclick="showMsg()">클릭</button>
+	</p>
+	<hr>
+	<p id="temp">
+		버튼을 클릭하면 문장의 배경 색이 바뀝니다.
+		<button type="button" onclick="changeBgColor()">색 변경하기</button>
+		<button type="button" onclick="stopChangeBgColor()">색 변경 중지</button>
+		<button type="button" onclick="resetBgColor()">색 초기화</button>
+	</p>
+	<hr>
+	<p>
+		버튼 클릭시 1초마다 배경 색이 바뀝니다.
+		<button type="button" onclick="changePageBgColor()">배경 변경</button>
+		<button type="button" onclick="stopChangePageBgColor()">배경 변경 중지</button>
+		<button type="button" onclick="resetPageBgColor()">배경 초기화</button>
+	</p>
+	<hr>
+	
+	<button type="button" onclick="movePage()">페이지 이동</button>
+</body>
+</html>

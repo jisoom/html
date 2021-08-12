@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		
+		
+		function result(){
+			var person = [];
+			while(true) {
+				var input =prompt("이름을 입력해주세요.");
+				if(input == "" || input == null) {
+					break;
+				}
+				person.push(input);
+			}
+			document.getElementById("name").innerHTML = person;
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="result();">이름 입력</button>
+	<p>사람 이름 [ <span id="name"></span> ]</p>
+</body>
+</html>

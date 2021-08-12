@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가위바위보</title>
+	<style type="text/css">
+		body { margin: 0; padding: 0; }
+		button { display: block; margin: 10px auto; }
+		.user { width:50%; text-align: center; padding: 10px 0px; margin-bottom: 10px; }
+		#user1 { background-color: yellow; float: left; }
+		#user2 { background-color: green; float: right; }
+		.imgBox { width: calc(50% - 10px); }
+		#imgBox1 { float: left; }
+		#imgBox2 { float: right; }
+		#imgBox2::after { clear: both; }
+		img { display: block; width: 100%; }
+		#result { clear:both; text-align: center; padding:10px; }
+	</style>
+	
+	<script type="text/javascript">
+		
+		function rsp() {
+			var arrGbb = ["가위", "바위", "보"];
+			var userSrc = ["ga_left.png", "ba_left.png", "bo_left.png"];
+			var comSrc = ["ga_right.png", "ba_right.png", "bo_right.png"];
+			
+			var user = ""; //사용자가 입력한 값
+			while(arrGbb.indexOf(user) == -1) {
+				user = prompt("가위바위보를 입력하세요");
+				//'취소'를 선택한 경우
+				if(user == null || user == "") {
+					return; //function 종료
+				}
+			}
+			
+			var userIdx = arrGbb.indexOf(user);
+			var comIdx = parseInt(Math.random() * 3);
+			
+			var result = "";
+			
+			if(userIdx < 0 || comIdx < 0) {
+				result ="입력 값 오류";
+			}else {
+				if(userIdx == comIdx) {
+					result += "비겼습니다.";
+				}else if(userIdx == 0 && comIdx == 2
+						|| userIdx == 1 && comIdx == 0
+						|| userIdx == 2 && comIdx == 1) {
+					result += "사용자가 이겼습니다.";
+				}else {
+					result += "사용자가 졌습니다.";
+				}
+			}
+			
+			var imgRoot = "../../images/";
+			document.getElementById("leftImg").src = imgRoot + userSrc[userIdx];
+			document.getElementById("rightImg").src = imgRoot + comSrc[comIdx];
+			
+			document.getElementById("result").innerHTML = result;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			/* xxxx================================================================
+			var rnd = parseInt(Math.random() *3); //랜덤 숫자
+
+			var arr = ["가위", "바위", "보"]; //가위바위보 배열
+			var com = arr[rnd]; //컴퓨터 가위바위보 랜덤으로 넣어줌
+			
+			var user = prompt("가위, 바위, 보를 입력하세요.", "가위 | 바위 | 보"); //사용자 가위바위보 입력받음
+			
+			var leftSrc = document.getElementById("leftImg").src;
+			var rightSrc = document.getElementById("rightImg").src;
+			
+			var divHtml = document.getElementById("result").innerHTML;
+			var str = "입력 값 오류";
+			
+ 			if(user == "" || user == null || divHtml == "" ||divHtml == str) {
+ 				leftSrc = "../../images/ba_left.png";	
+ 				rightSrc = "../../images/ba_right.png";
+			}else {
+				
+				if(user == "가위") {
+					leftSrc = "../../images/ga_left.png";	
+				}else if(user == "바위") {
+					leftSrc = "../../images/ba_left.png";
+				}else { //보
+					leftSrc = "../../images/bo_left.png";
+				}
+				
+				if(com == "가위") {
+					rightSrc = "../../images/ga_right.png";
+				}else if(com == "바위") {
+					rightSrc = "../../images/ba_right.png";
+				}else {//보
+					rightSrc = "../../images/bo_right.png";
+				}
+			
+			} 
+
+
+			var userIdx = arr.indexOf(user);
+			var comIdx = arr.indexOf(com);
+			var result = ""; //결과
+			
+			if(userIdx < 0 || comIdx < 0) {
+				result ="입력 값 오류";
+			}else {
+				if(userIdx == comIdx) {
+					result ="비겼습니다.";
+				}else if(userIdx > comIdx) {
+					if(userIdx == 2 && comIdx == 0) {
+						result =  "컴퓨터가 이겼습니다.";
+					}else {
+						result = "당신이 이겼습니다.";
+					}
+				}else if(userIdx < comIdx) {
+					if(userIdx == 0 && comIdx == 2) {
+						result =  "당신이 이겼습니다.";
+					}else {
+						result =  "컴퓨터가 이겼습니다.";
+					}
+				}
+			}
+			document.getElementById("leftImg").src = leftSrc;
+			document.getElementById("rightImg").src = rightSrc;			
+			document.getElementById("result").innerHTML = result; */
+			
+		}
+
+	</script>
+</head>
+<body>
+	<button type="button" onclick="rsp();">게임시작</button>
+	<div class="user" id="user1">사람</div>
+	<div class="user" id="user2">컴퓨터</div>
+	<div class="imgBox" id="imgBox1">
+		<img id="leftImg"  alt="가위바위보 사진(사람)" src="../../images/ba_left.png">
+	</div>
+	<div class="imgBox" id="imgBox2">
+		<img id="rightImg" alt="가위바위보 사진(컴퓨터)" src="../../images/ba_right.png">	
+	</div>	
+	<div id="result"></div>
+</body>
+</html>

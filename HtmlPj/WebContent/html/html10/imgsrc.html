@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+/*  		var cnt = 1;
+		function turnOnOff() {
+			var src = document.getElementById("img").src;
+			if(cnt % 2 == 1) {
+			src = "../../images/sw_on.png";				
+			}else {
+			src = "../../images/sw_off.png";	
+			}
+			cnt++;
+			document.getElementById("img").src = src;
+		}  */
+		
+/* 		var power = false;
+		function turnOnOff() {
+			if(power) {
+			document.getElementById("img").src = "../../images/sw_off.png";	
+			power = false;
+			}else {
+			document.getElementById("img").src = "../../images/sw_on.png";				
+			power = true;
+			}
+		} */
+		
+  		function turnOnOff() {
+			//document.getElementsByTagName("img")[0]; <img>
+			var imgUrl = document.getElementsByTagName("img")[0].src;
+			
+			if(imgUrl.indexOf("_off.png") > -1) {
+				//'~off.png 인 경우'
+				imgUrl = imgUrl.replace("_off.png", "_on.png");
+			}else if(imgUrl.indexOf("_on.png") > -1) {
+				//'~on.png'인 경우
+				imgUrl = imgUrl.replace("_on.png", "_off.png");
+			}
+			document.getElementsByTagName("img")[0].src = imgUrl;
+		}
+		
+		function turnOnOff2(obj) {
+			console.log(obj); //<img>
+			console.log(obj.src); //img태그의 소스
+			//아래에는 dnldp turnOnOff()처럼 작업~
+			
+			var strSrc = obj.src; //이미 이미지 소스가 담겨있음
+			var arr = ["sw_off.png", "sw_on.png"];
+			if(strSrc.indexOf(arr[0]) > -1) { //sw_off.png인 경우
+				strSrc = strSrc.replace(arr[0], arr[1]);
+			}else {
+				strSrc = strSrc.replace(arr[1], arr[0]);
+			}
+			obj.src = strSrc; //obj.src 에 strSrc를 넣어서 적용시켜줌
+		}
+	</script>
+</head>
+<body>
+	<img id="img" alt="전원버튼" src="../../images/sw_off.png" onclick="turnOnOff();">
+	<hr>
+	<img id="img" alt="전원버튼" src="../../images/sw_off.png" onclick="turnOnOff2(this);">
+</body>
+</html>

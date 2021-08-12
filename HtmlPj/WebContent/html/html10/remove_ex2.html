@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		li:hover {
+		cursor : pointer;
+		}
+	</style>
+	<script type="text/javascript">
+	
+		//var ImgArr = [];
+		
+		function addImg(obj){ //쌤이 알려주신거
+			
+			//기존 이미지들 삭제하기 - remove, removeChild
+			var items = document.getElementById("list").getElementsByTagName("li"); // => <ul> => <li>
+			
+			//getElementsByTagName ==> 엘리먼트 찾아서 배열에 담아줌 ==>배열로 사용할 수 있음
+			
+			for(var i=0; i<items.length; i++) {
+				var imgs = items[i].getElementsByTagName("img"); // =><li> => <img>
+				
+				for (var j = 0; j < imgs.length; j++) {
+					imgs[j].remove();
+				}
+			}
+			
+			//obj.innerHTML => '컴퓨터'
+			//obj.childNodes[0] => 'textNode' ==> obj.childNodes[0].data => '컴퓨터'
+			//얘도 마찬가지로 노드이기때문에 obj.firstNode.data => '컴퓨터'
+			
+			var title = obj.title; //=> 'sponge2.png'
+			var val = obj.childNodes[0].data; // =>'컴퓨터'
+			
+			//이미지 요소 만들기
+			var objImg = document.createElement("img");
+			objImg.alt = val;
+			objImg.src = "../../images/" + title;
+			objImg.height = "50";
+			
+			//이미지 요소 추가하기
+			obj.appendChild(objImg);
+			
+			
+			
+			
+			//xxxx---------------------------------------------------------------------------------
+			/* var imgTag = document.createElement("img"); //열면 새로 만들어줄 이미지 태그
+			var liChild = obj.children[0]; //열려있으면 지워줄 이미지태그(이미 만들어져 있는 이미지 태그)
+			var list = document.getElementsByClassName("box")[0].getElementsByTagName("li");
+			
+			if(ImgArr.length == 0) {
+				for(var i=0; i <list.length; i++) {
+					ImgArr[i] = false;
+				}
+			}
+			console.log(ImgArr);
+			
+			var idx = 0;
+			
+			for(var i=0; i<list.length; i++) {
+				if(list[i] == obj) {
+					if(ImgArr[i]) {
+						obj.removeChild(liChild);
+						ImgArr[i] = false;
+					}else {
+						imgTag.src = "../../images/" + obj.title;
+						imgTag.height = "100";
+						imgTag.style.borderRadius = "50px";
+						obj.appendChild(imgTag);
+						ImgArr[i] = true;
+					}
+				}else {
+					if(ImgArr[i] == true) {
+						list[i].removeChild(list[i].children[0]);
+						ImgArr[i] = false;
+					}
+				}
+			} */
+			
+
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul id="list">
+			<li title="sponge2.png" onclick="addImg(this)">컴퓨터1</li>
+			<li title="hong.png" onclick="addImg(this)">식품2</li>
+			<li title="tiger.jpg" onclick="addImg(this)">호랑이</li>
+			<li title="lion.jpg" onclick="addImg(this)">cloud03</li>
+			<li title="sea.jfif" onclick="addImg(this)">coffee1</li>
+		</ul>
+	</div>	
+</body>
+</html>

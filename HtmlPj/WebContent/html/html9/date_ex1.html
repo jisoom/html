@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function proc() {
+			//현재시간 구하기
+			var currDate = new Date(); //=>Date 객체
+			
+			console.log(currDate.getTime()); //currDate을 milisec으로 리턴
+			
+			//7일 뒤 날짜 계산
+			//7 * 24 *60 *60
+			// 시         분      초
+			var afterTime = currDate.getTime() + (7 * 24 * 60 * 60 * 1000); //7일에 대한 milisec
+			var afterDate = new Date(afterTime);
+			
+			//현재 시간 화면에 표시
+			document.getElementById("spcurrTime").innerHTML = currDate;
+			
+			//7일 후의 날짜 화면에 표시
+			document.getElementById("spAfter").innerHTML = afterDate;
+		}
+		
+		
+		function checkDate() {
+			var buyDate = document.getElementById("buyDate").value;
+			console.log(buyDate);
+			//new DAte("2021-5-10") ==> 2021-05-10 오전 9시
+			//new DAte("2021-05-10 ") ==> 2021-05-10 오전 9시
+			//new DAte("2021-05-10 00:00") ==> 2021-05-10 오전 0시
+			//new DAte("2021-05-10 00:00:00") ==> 2021-05-10 오전 0시
+			
+			
+ 			var buyTime = (new Date(buyDate)).getTime(); //ex) new Date("2021-05-12") 
+			/* var buyTime = (new Date(buyDate + "00:00:00")).getTime(); */ 
+			console.log("구입일자 date : " + new Date(buyDate));
+			
+			var currDate = new Date();
+			var currTime = currDate.getTime();
+			
+			//currTime에도 00:00:00으로 해주거나 if문써서 1.232134이런게 나와도 1로 처리해줌
+			var result = (currTime - buyTime)/1000/60/60/24;
+			result = parseInt(result);
+			
+			console.log(result);
+			
+			if(result > 7) {
+				alert("교환기간이 지났습니다. 교환기간은 7일 입니다.")
+			}else {
+				alert("교환가능합니다.");
+			}
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="proc();">수행</button>
+	<p>현재 시간은 <span id="spcurrTime"></span>입니다.</p>
+	<p>7일 후  시간은 <span id="spAfter"></span>입니다.</p>
+	
+	구입 날짜 : <input type="date" id="buyDate">
+	<button type="button" onclick="checkDate();">검사</button>
+</body>
+</html>

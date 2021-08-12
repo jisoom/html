@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function addText() {
+			//document.createTextNode("무궁화 꽃이 피었습니다.");
+			
+			//텍스트 노드 생성
+			var msg = "무궁화 꽃이 피었습니다.";
+			var node = document.createTextNode(msg);
+			document.getElementById("target").appendChild(node);
+			
+			//요소(element) 생성
+			var ele = document.createElement("br"); //element기 때문에 태그 굳이 안써도 됨
+			document.getElementById("target").appendChild(ele);
+			
+			var eleImg = document.createElement("img"); //<img>
+			//<img src = "~">
+			eleImg.src = "../../images/coffee1.jfif";
+			eleImg.height = "50";
+			document.getElementById("target").appendChild(eleImg);
+
+		}
+	</script>
+</head>
+<body>
+	<div style="border: 1px solid;" id="target" onclick="addText()">
+		클릭하세요.
+		<br>
+	</div>
+</body>
+</html>

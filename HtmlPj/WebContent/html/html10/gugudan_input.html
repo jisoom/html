@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>구구단</title>
+	<style type="text/css">
+		.in {
+			margin: 0 auto;
+			width: 100px;
+		}
+		
+		input {
+			width: 20px;
+			padding: 5px;
+		}
+
+		button {
+			padding: 5px 10px;
+			cursor: pointer;
+			width: 60px;
+		}
+		textarea {
+			display: block;
+			margin: 0 auto;
+			font-size: 18px;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function gugudan() {
+			
+			var result = 0;
+			var dan = document.getElementById("dan").value;	
+			var tVal = document.getElementById("result").value;
+			
+			tVal = dan + "단" + "\n" + "\n";
+			
+			document.getElementById("result").value = tVal;
+			
+			for (var i = 1; i < 10; i++) {
+				result = dan * i;	
+				tVal = dan + " * " + i  + " = " + result;
+
+			 document.getElementById("result").value += tVal + "\n";
+			}
+		}
+		
+
+	</script>
+</head>
+<body>
+	<div class="in">
+		<input type="text" id="dan">
+		<button type="button" onclick="gugudan()">출력</button>
+	</div>
+	<br>
+	<br>
+	<textarea id="result" cols="20" rows="15"></textarea>
+
+</body>
+</html>

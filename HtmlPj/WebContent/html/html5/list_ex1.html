@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.sample1 {
+			list-style-type: circle;
+/* 			list-style-image: url(""); */
+		}
+		.sample2 {
+			list-style-type: lower-roman;
+			list-style-position: inside;
+		}
+		ul.menu {
+			border-top: 1px solid red;
+			border-bottom: 1px solid red;
+			padding: 10px 0px;
+			text-align: center;
+		}
+		.menu li {
+			text-transform: uppercase;
+			display: inline;
+/* 			border: 1px solid; */
+			padding: 2px 5px;
+			letter-spacing: 5px;
+			margin: 0px 15px; 
+		}
+		.menu li a {
+			text-decoration: none;
+			color: black;
+		}
+		.menu li:hover {
+/* 			background-color: yellow; */	
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>아메리카노</li>
+		<li>카페라떼</li>
+		<li>카페모카</li>
+	</ul>
+	<hr>
+	<ul class="sample1">
+		<li>아메리카노</li>
+		<li>카페라떼</li>
+		<li>카페모카</li>
+	</ul>
+	<ol class="sample2">
+		<li>아메리카노</li>
+		<li>카페라떼</li>
+		<li>카페모카</li>
+	</ol>
+	<hr>
+	<ul class="menu">
+		<li><a href="">home</a></li>
+		<li><a href="">blog</a></li>
+		<li><a href="">about</a></li>
+		<li><a href="">contact</a></li>
+	</ul>
+	
+</body>
+</html>

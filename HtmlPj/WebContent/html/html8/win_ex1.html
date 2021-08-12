@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가위바위보 => 승자출력</title>
+	<script type="text/javascript">
+		var win = "";
+		
+		while(true){
+			var input1 = prompt("첫번째 사람의 가위 바위 보를 입력하세요");
+	
+				
+			if(input1 == "가위" || input1 == "바위" || input1 == "보") {
+				break;	
+				
+			} else {
+				alert("잘못 입력하여 가위바위보를 진행할 수 없습니다.");
+				
+			}
+		}
+		
+		while(true){
+			var input2 = prompt("두번째 사람의 가위 바위 보를 입력하세요");
+	
+				
+			if(input2 == "가위" || input2 == "바위" || input2 == "보") {
+				break;	
+				
+			} else {
+				alert("잘못 입력하여 가위바위보를 진행할 수 없습니다.");
+				
+			}
+		}
+			
+			
+		if(input1 =="가위" && input2 == "보" || input1 =="바위" && input2 =="가위" || input1 =="보" && input2 =="바위"){
+			win = "결과 : 첫번째 사람 승!!!";
+		}else if(input2 =="가위" && input1 == "보" || input2 =="바위" && input1 =="가위" || input2 =="보" && input1 =="바위"){
+			win = "결과 : 두번째 사람 승!!!";
+		}else if(input1 == input2){
+			win = "결과 : 무승부!!!";
+		}
+			
+		document.write(win);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

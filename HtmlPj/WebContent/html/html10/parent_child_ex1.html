@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DOM 트리 순회</title>
+</head>
+<body>
+	<h1>메뉴</h1>
+	<p>오늘도 저희 매장을 찾아주셔서 감사합니다.<p>
+	<ul>
+		<li id ="tmp1">커피
+			<ul>
+				<li>아메리카노</li>
+				<li>카페라떼</li>
+				<li>카푸치노</li>
+			</ul>
+		</li>
+		<li>No커피
+			<ul>
+				<li>레몬에이드</li>
+				<li>콜라</li>
+			</ul>
+		</li>
+	</ul>
+	<button type="button" onclick="proc()"></button>
+	<div id="result">
+		<!-- 레몬에이드, 콜라 -->
+	</div>
+	<script type="text/javascript">
+		function proc() {
+			var list = document.getElementsByTagName("ul")[0]; //ul
+			
+			var noCoffeeList = list.getElementsByTagName("ul")[1]; //ul 안의 2번째 ul
+			
+			var arrItem = noCoffeeList.getElementsByTagName("li");
+			
+			var strHtml = "";
+			for(var i=0; i<arrItem.length; i++) {
+				arrItem[i]; // <li>레몬에이드</li>
+				console.log("==================================");
+				console.log(arrItem[i]);
+				//console.log("value : " +arrItem[i].value); //X
+				console.log("innerHTML : " +arrItem[i].innerHTML); //O  //앞에 innerHTML이라는 문자열이 있어서 문자열로 인식됨 ==> 확장안됨 
+				//console.log(arrItem[i].children); //하위 요소 리턴 ==>X
+				console.log(arrItem[i].childNodes); //하위 노드 목록 리턴
+				console.log(arrItem[i].childNodes[0]); //하위 노드 목록의 0번째 노드 리턴 ==> "레몬에이드" 텍스트 노드 리턴
+				
+				//텍스트 노드에서 텍스트 가지고 오기
+				console.log(arrItem[i].childNodes[0].data); //텍스트를 가지고 오기에 가장 적합
+				console.log(arrItem[i].childNodes[0].nodeValue); //data와 결과는 같으나 텍스트 외의 속성 등 다른 값들도 포함하고 있음
+				console.log(arrItem[i].childNodes[0].textContent); //현 상태는 사용가능하지만, 하위 노드들의 텍스트도 다 가지고 오기 때문에 적합하지 않음
+				//break; 테스트용
+/* 				if(i>0) {
+					strHtml += ", ";
+				}
+				strHtml += arrItem[i].childNodes[0].data; */ //Object Text 타입임
+				
+				strHtml += arrItem[i].childNodes[0].data + ", ";
+			}
+			strHtml = strHtml.substr(0, strHtml.length-2);
+			document.getElementById("result").innerHTML = strHtml;
+		}
+	</script>
+</body>
+</html>

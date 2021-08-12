@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>if, while</title>
+	<script type="text/javascript">
+	/*  if문 사용 */
+		//현재 시간을 가지고 와서 영어로 인사(alert)
+		 var currHour= new Date().getHours; //Date().getHours : 시간만 가져옴
+		//12시 이전이면 굿모닝
+		if(currHour < 12) {
+			//alert("Good morning~");
+			msg = "Good morning~";
+		} else if(currHour < 18) {
+			//alert("Good afternoon~");
+			msg = "Good afternoon~~";
+		} else {
+			//alert("Good evening~");
+			msg = "Good evemomg~~";
+		}
+		 
+//		 alert(msg);
+		 document.write(msg);
+	
+		 /*swith문 사용*/
+		 var grade = prompt("학점을 입력하세요.", "A~f 사이의 문자로 입력");
+		 //학점이 A일 때 "참 잘했어요"
+		 //학점이 B일때 "잘했어요"
+		 //---F-일때 ''재수강하세요'
+		 switch(grade) {
+		 case "A" :
+			 alert("참 잘했어요");
+		 	 break;
+		 
+		 case "B" :
+			 alert("잘했어요");
+		 	 break;
+		 
+		 case "C" :
+			 alert("멋져요");
+			 break;
+		 //..
+		 defult:
+			 alert("입력값 오류(입력값 :" +grade +")");
+		 }
+		 
+		 
+		//18시 이저이면 굿에프터눈
+		//그 외는 굿이브닝
+//		alert();
+	</script>
+</head>
+<body>
+
+	
+</body>
+</html>

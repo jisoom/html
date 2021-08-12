@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function proc() {
+			//getElementById
+			var userName = document.getElementById("userName").value;
+			alert(userName + "씨, 안녕하세요.");
+			
+			//getElementsByName
+			//오류(배열)
+/* 			var userAge = document.getElementsByName("userAge").value;
+			alert(userAge + "살 이시군요."); */
+			
+			//정상
+			var userAge = document.getElementsByName("userAge")[0].value;
+			alert(userAge + "살 이시군요.");
+		}
+		
+	</script>
+</head>
+<body>
+	<form>
+		이름 :  <input id="userName" type="text"><br>
+		나이 : <input name="userAge" type="text"><br>
+		<button type="button" onclick="proc()">클릭</button>
+	</form>
+
+</body>
+</html>

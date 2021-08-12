@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#result2 {
+			border: 2px dashed red;
+			width: 500px;
+			height: 200px;
+		}
+		div:nth-of-type(1) {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		div:nth-of-type(2)
+		,div:nth-of-type(3) {
+			background-color: pink;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		img {
+			width: 400px;
+		}
+	</style>
+	<script type="text/javascript">
+		function read() {
+			var fileList = document.getElementById("attachFile").files;
+			var file = fileList[0];
+			
+			var str = "파일명 : " + file.name 
+			+ "<br>" + "파일 크기 : " +  file.size
+			+ "<br>" + "파일 종류 : " + file.type
+			+ "<br>" + "변경날짜 : " + file.lastModifiedDate; 
+			
+			document.getElementById("result2").innerHTML = str;
+			
+			var reader = new FileReader();
+			var filetype = file.type.substr(0,5);
+			
+			var imgBox = document.getElementById("imgBox");
+			if(filetype == "image") {
+				
+				reader.readAsDataURL(file);
+				reader.onload = function () { //읽기에 성공했을 때
+					document.getElementById("result1").value = reader.result;
+					
+ 					imgBox.src = reader.result;
+				}//준비가 다 되면 해주세요
+				
+			}else {
+				reader.readAsText(file);
+				reader.onload = function () {
+					document.getElementById("result1").value = reader.result;
+					imgBox.src = "";
+					
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<input type="file" id="attachFile" name="attachFile">	
+		<button type="button" onclick="read();">읽기</button>
+	</div>
+	<div>
+		<h2>결과 출력(FileReader객체)</h2>
+		<p>이미지 파일일 경우에는 DataURL형식으로 아닌 경우 Text형식으로</p>
+		<textarea rows="10" cols="50" id="result1"></textarea>
+	</div>
+	<div>		
+		<h2>파일 정보(File객체)</h2>
+		<p>이미지 파일을 읽은 경우에 이미지가 표시된다.</p> 
+		<p>다른 파일을 읽었을 경우 이미지가 표시되지 않는다.</p>
+		<img id="imgBox">
+		<div id="result2"></div>
+	</div>
+</body>
+</html>

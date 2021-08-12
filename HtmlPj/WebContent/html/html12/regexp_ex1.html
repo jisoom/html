@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>정규표현식</title>
+	<script type="text/javascript">
+		function validate() {
+			var tel = document.getElementById("tel").value;
+			var regExp = /^\d{3}-\d{4}-\d{4}$/; //핸드폰 형식
+			if(tel.match(regExp)){
+				alert("유효한 값입니다.");
+			}else {
+				alert("유효하지 않은 값입니다.");
+				documenet.getElementById("tel").focus();
+			}
+			
+		}
+		
+		var emailExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$ /;
+	</script>
+</head>
+<body>
+	전화번호 : <input type="text" id="tel">
+	<button type="button" onclick="validate()">검증</button>
+</body>
+</html>

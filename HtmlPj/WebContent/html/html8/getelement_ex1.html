@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 요소 찾기</title>
+	<script type="text/javascript">
+		function proc() { //호출하면 실행하려고 정의해둔 거라서 proc()가 호출되면 실행되기 때문에 head에 적어도 id 찾을 수 있음
+//			document.getElementById("temp") ==> <h1 id="temp">내 이름은 홍길동</h1>
+			var ele = document.getElementById("temp");
+			ele.style.color = "red"; //스타일 - 색바꿈
+			ele.innerHTML = "빨간색으로 변경"; //태그 내용바꿈
+			
+			
+		}
+	</script>
+</head>
+<body>
+	<h1 id="temp" style="color: blue;">내 이름은 홍길동</h1>
+	<button type="button" onclick="proc()">색바꾸기</button>
+	
+</body>
+</html>

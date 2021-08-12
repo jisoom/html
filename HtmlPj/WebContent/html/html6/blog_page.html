@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Blog Page</title>
+	<style type="text/css">
+		body, ul, li {
+			margin: 0;
+			background-color: silver;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			margin: 0;
+		}
+		header {
+			background-color: pink;
+ 			line-height: 100px; 
+			text-align: center;
+		}
+/* 		h2 {
+			padding: 10px 20px; 
+		} */		
+		nav {
+			background-color: orange;
+			width:30%;
+			height: 80vh;
+			float: left;
+		}
+		nav h2 {
+			margin-left: 20px;
+			padding-top: 10px;
+		}
+		nav ul {
+			display: block; 
+			background-color: orange;
+		}
+		nav li {
+			margin-left: 30px;
+			background-color: orange;
+		}
+		a:link {
+			color:skyblue;
+		}
+		a:visited {
+			color: red;
+		}
+		.image {
+			margin-top: 20px;
+		}
+		.image img {
+			display:block;
+			width: 70%;
+			margin: 0 auto;
+			max-height: 230px;
+		}
+		.image p {
+			text-align: center;
+			margin: 0;
+		}
+		section {
+			background-color: yellow;
+			width:70%;
+			height: 80vh;
+			float: right;
+		}
+		.text {
+			margin:20px auto;
+			padding-left: 20px;
+			padding-right: 20px;
+			
+		}
+		footer {
+			clear: both;
+/* 			height:30px; */
+			padding:15px 0px;
+			background-color: hotpink;
+			text-align: center;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>My Blog Page</h1>
+	</header>
+	<nav>
+		<h2>Links</h2>
+		<ul>
+			<li><a href="#">W3C</a></li>
+			<li><a href="#">MOZILLA</a></li>
+			<li><a href="#">HTML Dogs</a></li>
+		</ul>
+		<div class="image">
+			<img alt="홍길동사진" src="../../images/hong.png">
+			<p>홍길동</p>
+		</div>
+	</nav>
+	<section>
+		<div class="text">
+			<h2>Semantic Tags</h2>
+			<p>시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다.</p>
+		</div>
+		
+		<div class="text">
+			<h2>div와 span</h2>
+			<p>
+			div은 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다. span 요소는 인라인 요소로서
+			텍스트를 위한 컨테이너로 사용할 수 있다.
+			</p>
+		</div>
+	</section>
+	<footer>
+		<h3>Copyright(c) 2013 Hong</h3>
+	</footer>
+	
+</body>
+</html>

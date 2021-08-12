@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>리스트에 새로운 이미지 태그 만들어 추가하기</title>
+	<script type="text/javascript">
+
+		function proc() {
+
+			var arrList = document.getElementsByClassName("box")[0]
+					.getElementsByTagName("li");
+
+			for (var i = 0; i < arrList.length; i++) {
+
+				var item = arrList[i]; //<li>
+				console.log(item.title); //sponge2.png
+
+				console.log(item.childNodes[0].data) //<li> => textNode => data 붙여주면 => text
+				console.log(item.firstChild.data) //<li> => textNode => data 붙여주면 => text
+
+				var objImg = document.createElement("img");
+				objImg.alt = item.childNodes[0].data;
+				objImg.src = "../../images/" + item.title;
+				objImg.style.borderRadius = "50";
+				objImg.height = "50";
+
+				item.appendChild(objImg);
+
+			}
+
+		}
+		
+	</script>
+</head>
+<body>
+	<div class="box">
+		<button type="button" onclick="proc();">클릭</button>
+		<ul>
+			<li title="sponge2.png">컴퓨터1</li>
+			<li title="hong.png">식품2</li>
+			<li title="lion.jpg">호랑이</li>
+			<li title="tiger.jpg">cloud03</li>
+			<li title="sea.jfif">coffee1</li>
+		</ul>
+	</div>
+	<ul>
+		<li>아메리카노</li>
+		<li>아메리카노</li>
+		<li>아메리카노</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+
+		var set = new Set();
+		var arr = [];
+		
+		function inputInt() {
+			while (set.size < 5) {
+				var input = prompt("정수를 입력해주세요.", "중복되는 숫자는 입력되지 않습니다.");
+				set.add(parseInt(input));
+			}
+
+			arr = Array.from(set);
+			document.getElementById("int").innerHTML = arr;
+		}
+		
+		function ascSort() {
+			arr.sort(function (a, b) {
+				return a - b;
+			});
+			document.getElementById("int").innerHTML = arr;
+		}
+		
+		function descSort() {
+			arr.sort(function (a, b) {
+				return b - a;
+			});
+			document.getElementById("int").innerHTML = arr;
+		}
+		
+		//서로 다른 정수 5개를 입력받아서 출력하기
+		//정수 입력받기
+		//기존 입력이랑 중복 체크
+		//중복없으면 추가
+		//중복 있으면 pass
+		//5개가 되면 끝
+		//5개가 안됐으면 다시 입력
+		
+/* 		var arr= [];
+		var flag = true;
+		while(flag){
+			var val = prompt("정수 입력하기");
+			
+			var valIdx = arr.indexOf(val);
+			if(valIdx == -1) { //어레이는 인덱스가 0부터 시작인데, 어레이에 해당 값이 없으면 -1이 나옴 ==>없을 때 푸쉬해줌
+				arr.push(val);
+			}else {
+				//아무작업안함 지워도됨
+			}							
+			if(arr.length == 5) {       //if(arr.push(val) == 5)   
+				flag = false; //break;
+			}
+		}
+		document.getElementById("int").innerHTML = arr; */
+		
+	</script>
+</head>
+<body>
+	<button type="button" onclick="inputInt();">정수입력</button>
+	<button type="button" onclick="ascSort();">오름차순 정렬</button>
+	<button type="button" onclick="descSort();">내림차순 정렬</button>
+	<p>정수 5개 [<span id="int"></span>]</p>
+</body>
+</html>

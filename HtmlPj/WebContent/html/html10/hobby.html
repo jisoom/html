@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		fieldset {
+			width: 80px;
+		}
+		legend {
+			text-align: center;	
+		}
+	</style>
+	<script type="text/javascript">
+		function result() {
+			var strResult = "";
+			var name = document.getElementById("inName").value;// <input> 이름 값
+			strResult = name + "씨!" + "\n";
+			
+			var genNodeList = document.getElementsByName("gender"); //gender인 라디오박스 (배열이 담김)
+			var radioVal = ""; //체크된 라디오박스값
+			
+/* 			genNodeList.forEach((node) => {
+				if(node.checked) {
+					radioVal = node.value;
+				}
+			}); */
+			
+			for(var i=0; i<genNodeList.length; i++) {
+				if(genNodeList[i].checked) {
+					radioVal = genNodeList[i].value;
+				}
+			}
+			
+			strResult += "당신은 " + radioVal + "이고," + "\n";
+			
+			var hoNodeList = document.getElementsByName("hobby"); //hobby인 체크박스
+			var cheValArr = []; //체크된 것들 담아옴
+			var cheVal; //substr으로 마지막 , 제거함
+			
+/* 			hoNodeList.forEach((node) => {
+				if(node.checked) {
+					cheValArr += node.value + ", ";
+					cheVal = cheValArr.substr(0,cheValArr.length-2);
+				}
+			}); */
+			
+			for(var i=0; i<hoNodeList.length; i++) {
+				if(hoNodeList[i].checked) {
+					cheValArr += hoNodeList[i].value + ", ";
+				}
+			}
+			cheVal = cheValArr.substr(0, cheValArr.length-2);
+			
+			
+			if(cheValArr.length> 0) {
+				strResult += "취미는 " + cheVal + "이군요!";				
+			}else {
+				strResult += "취미가 없군요";
+			}
+			
+			document.getElementById("txtResult").value = strResult; 
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+				<legend>취미</legend>
+				이름 : <input type="text" id="inName">
+				<br><br>
+				성별 : <input type="radio" id="male" name="gender" value="남자" checked="checked"><label for="male">남</label>
+				<input type="radio" id="female" name="gender" value="여자"><label for="female">여</label>
+				
+				<br><br>
+				
+				취미 : <input type="checkbox" id="trip" name="hobby" value ="여행"><label for="trip">여행</label>
+				<input type="checkbox" id="read" name="hobby" value ="독서"><label for="read">독서</label>
+				<input type="checkbox" id="movie" name="hobby" value ="영화감상"><label for="movie">영화감상</label>
+				<input type="checkbox" id="baduk" name="hobby" value ="바둑"><label for="baduk">바둑</label>
+				<input type="checkbox" id="chess" name="hobby" value ="장기"><label for="chess">장기</label>
+				<input type="checkbox" id="mount" name="hobby" value ="등산"><label for="mount">등산</label>
+				<input type="checkbox" id="fish" name="hobby" value ="낚시"><label for="fish">낚시</label>
+				
+				<br><br>
+				
+				<button type="button" onclick="result();">결과 출력</button>
+				
+				<br><br>
+				
+				<textarea rows="10" cols="70" id="txtResult"></textarea>
+		</fieldset>
+	</form>
+</body>
+</html>

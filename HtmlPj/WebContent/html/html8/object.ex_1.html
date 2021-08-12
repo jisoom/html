@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS Object형</title>
+	<script type="text/javascript">
+		var str;
+		var str1 = "문자";
+		
+		//var obj = {...};
+		
+		var myCar = {
+				model : "쏘나타"
+				,price : 30000000 
+				,year : 2021
+				,falg : true
+		};
+		
+		document.write(myCar); //[object Object]
+		document.write(myCar.model); //쏘나타
+		document.write(myCar.price); //30000000
+		
+		console.log(myCar); //콘솔에 myCar정보 볼 수 있음
+		
+		document.write( myCar['price'] ); //30000000
+		document.write( myCar['model'] ); //쏘나타
+		
+	</script>
+</head>
+<body>
+	
+	
+</body>
+</html>

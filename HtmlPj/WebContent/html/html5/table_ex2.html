@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>테이블 예제2</title>
+	<style type="text/css">
+		html {
+			font-family: "Trebuchet MS", sans-serif;
+		}
+		.sample1 {
+			border:none;
+			width: 50%;
+			text-align: center;
+		}
+		th, td {
+			border: 1px dotted gray;
+		}
+		table.sample1 th {
+			background-color: blue;
+			color: white;
+		}
+/* 		table.sample1 tr td:nth-of-type(1){
+			text-align: center;
+		}
+		table.sample1 tr td:nth-of-type(2){
+			text-align: left;
+		} */
+		
+		table.sample1 tr:nth-child(2n+1) {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<table class="sample1">
+		<tr>
+			<th>이름</th>
+			<th>이메일</th>
+		</tr>
+		<tr>
+			<td>김철수</td>
+			<td>chul@google.com</td>
+		</tr>
+		<tr>
+			<td>김영희</td>
+			<td>young@google.com</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>hong@google.com</td>
+		</tr>
+		<tr>
+			<td>김수진</td>
+			<td>sujin@google.com</td>
+		</tr>
+	
+	</table>
+	
+</body>
+</html>

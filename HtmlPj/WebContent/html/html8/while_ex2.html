@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	//1번(1~10까지의 합)
+		function sum() {
+/* 	 		var i =1; */
+			var sum =0;
+/* 			while(i < 11) {
+				sum += i;
+				i++;
+			}
+			document.write(sum); */ 
+			
+/* 			for(var i =0; i<10; i++) {
+				sum += (i + 1);
+			}
+			document.write(sum);
+		} */
+		
+		for(var i =1; i<=10; i++) {
+			sum += i;
+		}
+		document.getElementById("sum1").innerHTML = "답 : " + sum;
+		
+	}
+
+		
+		document.write("<hr>");
+		
+		
+	//2번(1~200까지 짝수들의 합)	
+		function sum2(){
+	  		var sum =0;
+			for(var i =1 ; i<201; i++) {
+				
+/*  				if(i % 2 == 0) {
+					sum += i;
+				}else {				
+					continue;
+				} */
+				
+				if( (i % 2) ) { //홀수인 경우는 1, 짝수는 0이라 0인경우는 패스, 나머지는 실행됨
+					continue;
+				}
+				sum += i;
+			}
+		
+			document.getElementById("sum2").innerHTML =  "답 : " + sum;
+	}
+			
+	
+			//0일 때를 제외하고 나머지는 알러트가 뜸
+/*			 if(0){
+				alert(0); 
+			} 
+			if(1){
+				alert(1);
+			}
+ 			if(50){
+				alert(50);
+			}
+			if(-1){
+				alert(-1);
+			}  */
+			
+			
+		function sum3() {
+		
+		sum = 0;
+			while (true) {
+				var p = prompt("숫자를 입력해 주세요");
+				if (p == 0) {
+					break;
+				} else {
+					sum += Number(p); //왼쪽 변수에 number로 건들이면 에러남
+				}
+			}
+			document.getElementById("sum3").innerHTML = sum;
+		}
+
+		function sum4() {
+			document.getElementById("sum4").innerHTML = ""; //결과 영역 빈값으로 초기화 시키기
+			var sum = 0;
+			for (var i = 1; i < 11; i++) {
+				for (var k = 1; k < 11; k++) {
+					if ((i + k) % 3) { //0 => 3의 배수가 아닌 경우
+						continue;
+					}
+					sum = i + k;
+					document.getElementById("sum4").innerHTML += sum;
+				}
+				document.getElementById("sum4").innerHTML += "<br>"; //얘는 p태그니까 <br>로 띄어줌 textarea는  \n
+			}
+
+		}
+
+		function sum5() {
+			sum = "";
+			
+			for (var i = 1; i < 101; i++) {
+				if ((i % 2 == 0) && (i % 3 == 0)) { //6의 배수로 써도 됨
+					sum += i + ", ";
+				} 
+/* 				else {
+					continue;
+				} */
+			}
+			sumlen = sum.length;
+			sum = sum.substring(0, sumlen - 2);
+			document.getElementById("sum5").innerHTML = sum;
+		}
+		/* substr()과 substring()*/
+
+		function sum6() {
+			
+			while (true) {
+				var input1 = prompt("숫자를 입력해주세요");
+				var input2 = prompt("숫자를 입력해주세요");
+				var sum = Number(input1) + Number(input2);
+				
+				if (sum >= 100) {
+					document.getElementById("sum6").innerHTML += sum;
+					break;
+				} else if (input1 == 0 && input2 == 0) {
+					break;
+				} else {
+					continue;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+ 	<span>1. 1~10까지 짝수의 합을 구하시오</span>
+	<button type="button" onclick="sum()">수행</button>
+	<p id="sum1"></p>
+	<hr>
+	
+	<span>2. 1~200까지 짝수의 합을 구하시오</span>
+	<button type="button" onclick="sum2()">수행</button>
+	<p id="sum2"></p> 
+	<hr>
+	
+	<span>3. 사용자가 입력한 값 계속 더하고, 0 입력하면 누적된 값을 출력하시오</span>
+	<button type="button" onclick="sum3()">수행</button>
+	<p id="sum3"></p> 
+	
+	<hr>
+	<span>4. 다중for문 이용해서 1~10까지 중 i와 k의 합이 3의 배수일 때만 출력하시오</span>
+	<button type="button" onclick="sum4()">수행</button>
+	<p id="sum4"></p> 
+	
+	<hr>
+	<span>5. 1~100까지 중 2의 배수이면서 3의 배수인 것만 출력하시오</span>
+	<button type="button" onclick="sum5()">수행</button>
+	<p id="sum5"></p>
+	
+	<hr>
+	<span>6. 두 수를 입력해서 두 수의 합이 100이상일때만 출력하시오(두 수 모두 0이 입력되면 종료)</span>
+	<button type="button" onclick="sum6()">수행</button>
+	<p id="sum6"></p>
+	
+</body>
+</html>

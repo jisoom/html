@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가상 클래스 이용하기</title>
+	<style type="text/css">
+		body{
+			margin:0px;
+		}
+		.abstract {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.abstract, td {
+			border: 2px solid #BF2604;
+		}
+		td{
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			font-size: 18px;
+		}
+		table.abstract tr:nth-child(1) {
+			background-color: #FFFF01;
+		}
+		table.abstract tr:nth-child(2n) {
+			background-color: #90EE90; 
+		}
+		
+		/*2n => even 2n+1=> odd*/ 
+	</style>
+</head>
+<body>
+	<table class="abstract">
+		<tr>
+			<td>알라딘</td>
+			<td>임꺽정</td>
+			<td>개나리</td>
+			<td>홍길동</td>
+		</tr> 
+		<tr>
+			<td>패밀리</td>
+			<td>스타일</td>
+			<td>텍스트</td>
+			<td>볼드체</td>
+		</tr>
+		<tr>
+			<td>선택자</td>
+			<td>인라인</td>
+			<td>패밀리</td>
+			<td>요소들</td>
+		</tr>
+		<tr>
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

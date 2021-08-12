@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>그 외 요소들</title>
+</head>
+<body>
+<form>
+	<input type="button" value="클릭">
+	<button type="button">클릭</button>
+	<hr>
+	<input type="submit" value="전송">
+	<button type="submit">전송</button>
+	<hr>
+	<input type="reset" value="초기화">
+	<button type="reset">초기화</button>
+	<hr>
+	<textarea name="description" rows="5" cols="10">홍길동은 무술이 뛰어나고</textarea>
+	<hr>
+	<select name="carBrand">
+		<option value="">--선택하세요--</option>
+		<option value="01">현대</option>
+		<option value="02" selected>KIA</option>
+		<option value="03">쉐보레</option>
+		<option value="04">포르쉐</option>
+		<option>벤츠</option>
+	</select>
+	<hr>
+	<fieldset>
+		<legend>개인정보</legend>
+		이름: <input type="text"><br>
+		전화번호: <input type="text"><br>
+		주소: <input type="text"><br>
+	</fieldset>
+	<hr>
+	성별 :
+	<input type="radio" name="gender" id="genderMale" value="M">
+	<label for="genderMale">남자</label>
+	<input type="radio" name="gender" id="genderFemale" value="F">
+	<label for="genderFemale">여자</label>
+	<!--"gender" : "M" -->
+	<br>
+	취미 :
+	<input type="checkbox" name="hobby" id="hobbySwimming" value="01">
+	<label for="hobbySwimming">수영</label>
+	<input type="checkbox" name="hobby" id="hobbyBook" value="02">
+	<label for="hobbyBook">독서</label>
+	<input type="checkbox" name="hobby" id="hobbyGame" value="03">
+	<label for="hobbyGame">게임</label>
+	<!--"hobby" : ["01", "02", "03" ] -->
+</form>
+</body>
+</html>

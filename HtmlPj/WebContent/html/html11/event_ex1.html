@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			border: 5px dotted red;
+			height: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		function init() {
+/* 			console.log(document);
+			console.log(document.getElementById("btn2")); */
+			document.getElementById("btn2").onclick = proc2; //()써주면 proc2를 실행하고 난 리턴값을 onclick했을 때 넣어줌 하지만 proc2는 리턴 값없음
+			
+			//이벤트리스너로 이벤트 할당하기
+			document.getElementById("btn3").addEventListener("click", proc3);
+			
+			//이벤트리스너로 이벤트 제거하기
+			//document.getElementById("btn3").removeEventListener("click", proc3);
+		}
+		
+		function proc1() {
+			alert(1);
+		}
+		
+		function proc2() {
+			alert(2);
+		}
+		
+		function proc3() {
+			alert(3);
+		}
+		
+		function changeBgColor(strColor) {
+			document.getElementById("target").style.backgroundColor = strColor;
+		}
+		
+		function changeBorder(obj, flag) {
+			//var objDiv = document.getElementById("target");
+			if(flag == 1){
+				//objDiv.style.border = "5px solid red";
+				obj.style.border = "5px solid red";
+			}else {
+				//objDiv.style.border = "1px dotted red";
+				obj.style.border = "1px dotted red";
+				
+			}
+		}
+	</script>
+</head>
+<body onload="init()">
+	<button type="button" id="btn1" onclick="proc1()">버튼1</button>
+	<button type="button" id="btn2">버튼2</button>
+	<button type="button" id="btn3">버튼3</button>
+	
+	<hr>
+	<div id="target" onmouseover="changeBorder(this, 1)" onmouseout="changeBorder(this, 0)">
+		<input type="radio" name="color" onclick="changeBgColor('blue')" id="blue"><label for="blue">파랑</label>
+		<input type="radio" name="color" onclick="changeBgColor('green')" id="green"><label for="green">초록</label>
+	</div>
+</body>
+</html>

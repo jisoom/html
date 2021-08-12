@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			height: 100px;
+			border: 1px solid;
+		}	
+		img {
+			height: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		function allowDrop(ev) {
+// 			console.log(ev);
+			ev.target; // ==> div
+			//this로 받은 obj와 ev.target 같음
+			ev.preventDefault(); //기본 동작을 막는 함수
+		}
+		
+		function drop(ev) {
+			ev.preventDefault(); //기본 동작을 막는 함수
+			
+			//var ele1 = document.getElementById("tmpImg"); //<img> -> drag1로 바꿨음
+			//var ele2 = document.getElementById("tmpDiv");
+			//ele2.appendChild(ele1);
+			
+			var eleId = ev.dataTransfer.getData("text");
+			console.log(eleId);
+			var ele1 = document.getElementById(eleId);
+			console.log(ele1);
+			//var ele2 = document.getElementById("tmpDiv");
+			//ele2.appendChild(ele1);
+			document.getElementById("tmpDiv").appendChild(ele1);
+			
+			//document.getElementById("tmpDiv").appendChild(targetObj);
+			//targetObj = null;
+		}
+		
+		var targetObj;
+		function drag(ev) {
+			ev.dataTransfer.setData("text", ev.target.id);
+// 			targetObj = ev.target;
+		}
+	</script>
+</head>
+<body>
+	<div id="tmpDiv" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+	<hr>
+	<img id="drag1" alt="호랑이" src="../../images/tiger.jpg" draggable="true" ondragstart="drag(event)">	
+	<img id="drag2" alt="호랑이" src="../../images/lion.jpg" draggable="true" ondragstart="drag(event)">	
+	<img id="drag3" alt="호랑이" src="../../images/hong.png" draggable="true" ondragstart="drag(event)">	
+	<img id="drag4" alt="호랑이" src="../../images/sponge2.png" draggable="true" ondragstart="drag(event)">	
+</body>
+</html>
