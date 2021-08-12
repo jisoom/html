@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
+	<link type="text/css" rel="stylesheet" href="../css/common.css">
+	<link type="text/css" rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+	<form action="#">
+		<fieldset>
+			<legend>회원정보입력</legend>
+			<label>아이디</label><br>
+			<input type="text" pattern="^([a-z0-9_]){6,20}$" placeholder="영문소문자, 숫자, 특수문자(_) 6~20자" required>
+			<button type="button">중복검사</button><br>
+			<label>패스워드</label><br>
+			<input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@!%*#?&])[A-Za-z\d$@!%*#?&]{8,}$" placeholder="영문 대소문자, 숫자, 특수문자 필수 8자 이상" required><br>
+			<label>패스워드 확인</label><br>
+			<input type="password" required><br>
+			<label>이름</label><br>
+			<input type="text" required><br>
+			<label>휴대폰 번호</label><br>
+			<input type="text" pattern="[0-9]{3}[0-9]{3,4}[0-9]{4}" placeholder="숫자만 입력(-제외)" required><br>
+			<label>이메일</label><br>
+			<input type="email" pattern="^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$" required><br>
+			<label>생일</label><br>
+			<input type="date"><br>
+			<label>홈페이지</label><br>
+			<input type="text" pattern="^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$" required><br>
+			<label>성별</label><br>
+			<input type="radio" name="gender" id="male"><label for="male">남성</label><br>
+			<input type="radio" name="gender" id="female"><label for="female">여성</label><br>
+		</fieldset>
+		<br>
+		<div class="register_button">
+			<button type="submit">제출</button>
+			<button type="reset">초기화</button><br>
+			<a href="main.html" target="_parent" style="text-decoration: underline;">Back to Home</a>
+		</div>
+	</form>
+</body>
+</html>

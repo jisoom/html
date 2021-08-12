@@ -1,0 +1,43 @@
+@charset "UTF-8";
+body {
+	background-color: #F5EAE1;
+}
+table, th, td {
+	margin:100px auto;
+	border: 2px solid ;
+	border-collapse: collapse;
+	padding: 10px;
+	color: black;
+	border-color: #F8C86A;
+	text-align: center;
+	width: 70%;
+}
+table {
+	margin-bottom: 10px;
+}
+th {
+	background-color: #F8C86A;
+	color: black;
+}
+caption {
+	color: black;
+	font-size: 2.5em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.shopcart_button {
+	text-align: center;
+}
+button {
+	background-color: black;
+	color: white;
+}
+button:hover {
+	background-color: white;
+	color:black;
+	cursor: pointer;
+}
+a {
+	text-decoration: underline;
+	font-size: 20px;
+}

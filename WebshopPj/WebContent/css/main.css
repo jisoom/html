@@ -1,0 +1,181 @@
+@charset "UTF-8";
+header {
+	text-align: center;
+	background-color: white;
+	padding: 10px 0px;
+	color: black;
+	position: relative;
+	height: 100px;
+	border-radius: 50px;
+}
+header h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 80px;
+}
+header:hover {
+	color: white;
+	transition: 0.5s;
+	background-color: #FDC24C;
+	cursor: pointer;
+}
+header img {
+	width: 60px;
+	height: 60px;
+	display:flex;
+	margin: 0px 20px;
+	border-radius: 100px; 
+}
+nav {
+	background-color: #F8C86A;
+	text-align: center;
+	margin-bottom: 10px;
+	height: 50px;
+	border-radius: 50px; 
+}
+nav ul {
+	display: inline-block;
+	height: 50px;
+	margin-bottom: 10px;
+}
+nav li {
+	display: inline-block; 
+	font-size: 16PX;
+	color: #FFFFFF;
+	font-weight: bold;
+	letter-spacing: 3px;
+	line-height: 30px;
+}
+nav a {
+	display: block;
+	padding: 10px 20px;
+}
+nav a:hover {
+	background-color: white;
+	color: #FA517B;
+}
+#left {
+	border-top-right-radius:20px;
+	border-bottom-right-radius: 20px;
+	float: left;
+	width: 15%;
+	background-color: #F97A7C;
+	margin-right: 10px;
+	height:70vh;
+}
+#left ul {
+	width: 80%;
+	margin:20px auto;
+	background-color: #FEEEEE;
+	border-radius: 5px; 
+	height: 60vh;
+}
+h4 {
+	font-weight: bold;
+	font-size:1.2em;
+	color:white;
+	letter-spacing: 3px;
+	cursor: default;
+}
+#left h4 {
+	margin: 10px 20px;
+}
+#left li {
+	border-bottom: 1px dashed #F97A7C;
+}
+#left a {
+	display: block;
+	padding: 10px;
+	letter-spacing: 3px;
+}
+section {
+	float:left;
+	margin-right: 10px;
+	width: calc(70% - 20px);
+	height:70vh;
+	border-radius: 20px;
+	background-color: #F5EAE1;
+}
+section iframe {
+	display:block;
+	width:100%;
+	height:70vh;
+	border: none;
+	border-radius: 20px;
+}
+#right {
+	border-top-left-radius:20px;
+	border-bottom-left-radius: 20px;
+	float: right;
+	width: 15%;
+	background-color: #8CAAF3;
+	height:70vh;
+	margin-bottom: 10px;
+}
+#right #shopcart {
+	padding:0 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+#shopcart h4 {
+	margin:0;
+	margin-bottom: 10px;
+}
+#shopcart p {
+	letter-spacing: 3px;
+	background-color: #EFF2F8;
+	padding: 20px 10px;
+	border-radius: 20px;
+	margin-bottom: 10px; 
+	cursor: default;
+}
+#login h4 {
+	margin:0;
+	margin-bottom: 10px;
+}
+a {
+	margin-left: 10px; 
+}
+#right a {
+	text-decoration: underline;
+	letter-spacing: 3px;
+}
+#right #login {
+	padding: 0 10px;
+}
+#right form {
+	background-color: #EFF2F8;
+	padding: 20px 10px;
+	border-radius: 20px;
+}
+#right form input {
+	border: none;
+	width: 90%;
+}
+button {
+	background-color: white;
+	color: black;
+	border: none;
+}
+button:hover {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+footer {
+	background-image: url("../images/chun.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	clear: both;
+	text-align: right;
+	background-color: #FCF0D8;
+	padding: 20px;
+	font-weight: bold;
+	color: black;
+	cursor: default;
+}
+footer p {
+	font-size: 18px;
+	letter-spacing: 3px;
+}
